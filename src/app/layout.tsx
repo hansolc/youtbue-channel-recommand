@@ -19,8 +19,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <SSRProvider>
-          <main>
-            <Container className="h-100">{children}</Container>
+          <main className="h-100">
+            <Container className="h-100 pt-5">{children}</Container>
           </main>
         </SSRProvider>
       </body>

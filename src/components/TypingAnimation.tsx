@@ -4,9 +4,13 @@ import { useEffect, useRef } from "react";
 
 interface TypingAnimationProps {
   text: string[];
+  fontSize?: "fs-1" | "fs-2" | "fs-3" | "fs-4" | "fs-5";
 }
 
-export default function TypingAnimation({ text }: TypingAnimationProps) {
+export default function TypingAnimation({
+  text,
+  fontSize = "fs-1",
+}: TypingAnimationProps) {
   const el = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const { current } = el;
@@ -33,7 +37,7 @@ export default function TypingAnimation({ text }: TypingAnimationProps) {
         tempText = fullText.substring(0, tempText.length + 1);
       }
 
-      el.innerHTML = `<span>${tempText}</span>`;
+      el.innerHTML = `<span class=${fontSize}>${tempText}</span>`;
 
       // 좀 더 자연스럽게 typing 되는 느낌을 주기 위해
       let delta = 200 - Math.random() * 100;
