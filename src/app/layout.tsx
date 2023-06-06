@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./globals.css";
+import "./globals.scss";
 import { Inter } from "next/font/google";
 import { Container, SSRProvider } from "@/components/bootstrap";
 
@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <SSRProvider>
           <main className="h-100">
-            <Container className="h-100 pt-5">{children}</Container>
+            <Container className="h-100">{children}</Container>
           </main>
         </SSRProvider>
       </body>
