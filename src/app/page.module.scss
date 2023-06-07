@@ -1,8 +1,27 @@
-.type {
-  animation: typing 3.5s  steps(40, end);
+.wrapper {
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+  display: flex;
+  flex-direction: column;
 }
 
-@keyframes typing {
-  from {width: 0};
-  to {width: 100%};
+.wrapper > section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+
+  &:nth-child(1){
+    background-color: red;
+  }
+  &:nth-child(2){
+    background-color: blue;
+  }
+  &:nth-child(3){
+    background-color: green;
+  }
+
 }
